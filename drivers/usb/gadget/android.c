@@ -2921,7 +2921,7 @@ static struct android_usb_function midi_function = {
 
 static int hid_function_init(struct android_usb_function *f, struct usb_composite_dev *cdev)
 {
-	return ghid_setup(cdev->gadget, 2);
+	return ghid_setup(cdev->gadget, 3);
 }
 
 static void hid_function_cleanup(struct android_usb_function *f)
