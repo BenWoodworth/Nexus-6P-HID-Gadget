@@ -64,6 +64,7 @@
 #include "f_hid.h"
 #include "f_hid_android_keyboard.c"
 #include "f_hid_android_mouse.c"
+#include "f_hid_android_gamepad.c"
 #include "f_rndis.c"
 #include "rndis.c"
 #include "f_qc_ecm.c"
@@ -2941,6 +2942,12 @@ static int hid_function_bind_config(struct android_usb_function *f, struct usb_c
 	ret = hidg_bind_config(c, &ghid_device_android_mouse, 1);
 	if (ret) {
 		pr_info("%s: hid_function_bind_config mouse failed: %d\n", __func__, ret);
+		return ret;
+	}
+	printk(KERN_INFO "hid gamepad\n");
+	ret = hidg_bind_config(c, &ghid_device_android_gamepad, 2);
+	if (ret) {
+		pr_info("%s: hid_function_bind_config gamepad failed: %d\n", __func__, ret);
 		return ret;
 	}
 	return 0;
