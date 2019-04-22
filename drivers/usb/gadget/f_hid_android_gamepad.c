@@ -5,7 +5,7 @@
 static struct hidg_func_descriptor ghid_device_android_gamepad = {
 	.subclass		= 1, /* Boot Interface Subclass */
 	.protocol		= 5, /* Game Pad */
-	.report_length		= 16,
+	.report_length		= 6,
 	.report_desc_length	= 46,
 	.report_desc		= {
 		0x05, 0x01, /* USAGE_PAGE (Generic Desktop)           */
